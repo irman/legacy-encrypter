@@ -3,6 +3,7 @@
 | Laravel Version | Package Version | Installation |
 | --- | --- | --- |
 | 5.3.* | 5.3.* | `composer require irman/legacy-encrypter:5.3.*` |
+| 5.4.* | 5.4.* | `composer require irman/legacy-encrypter:5.4.*` |
 
 ---
 

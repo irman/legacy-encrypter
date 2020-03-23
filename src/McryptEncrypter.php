@@ -8,9 +8,6 @@ use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Contracts\Encryption\EncryptException;
 use Illuminate\Contracts\Encryption\Encrypter as EncrypterContract;
 
-/**
- * @deprecated since version 5.1. Use Illuminate\Encryption\Encrypter.
- */
 class McryptEncrypter extends BaseEncrypter implements EncrypterContract
 {
     /**
@@ -66,15 +63,16 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
      * Encrypt the given value.
      *
      * @param  string  $value
+     * @param  bool  $serialize
      * @return string
      *
      * @throws \Illuminate\Contracts\Encryption\EncryptException
      */
-    public function encrypt($value)
+    public function encrypt($value, $serialize = true)
     {
         $iv = mcrypt_create_iv($this->getIvSize(), $this->getRandomizer());
 
-        $value = base64_encode($this->padAndMcrypt($value, $iv));
+        $value = base64_encode($this->padAndMcrypt($value, $iv, $serialize));
 
         // Once we have the encrypted value we will go ahead base64_encode the input
         // vector and create the MAC for the encrypted value so we can verify its
@@ -95,11 +93,15 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
      *
      * @param  string  $value
      * @param  string  $iv
+     * @param  bool  $serialize
      * @return string
      */
-    protected function padAndMcrypt($value, $iv)
+    protected function padAndMcrypt($value, $iv, $serialize)
     {
-        $value = $this->addPadding(serialize($value));
+        if($serialize){
+            $value = serialize($value);
+        }
+        $value = $this->addPadding($value);
 
         return mcrypt_encrypt($this->cipher, $this->key, $value, MCRYPT_MODE_CBC, $iv);
     }
@@ -108,9 +110,10 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
      * Decrypt the given value.
      *
      * @param  string  $payload
+     * @param  bool $unserialize
      * @return string
      */
-    public function decrypt($payload)
+    public function decrypt($payload, $unserialize = true)
     {
         $payload = $this->getJsonPayload($payload);
 
@@ -121,7 +124,9 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
 
         $iv = base64_decode($payload['iv']);
 
-        return unserialize($this->stripPadding($this->mcryptDecrypt($value, $iv)));
+        $decrypted = $this->stripPadding($this->mcryptDecrypt($value, $iv));
+
+        return $unserialize ? unserialize($decrypted) : $decrypted;
     }
 
     /**
