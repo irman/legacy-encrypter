@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\LegacyEncrypter;
+namespace Irman\LegacyEncrypter;
 
 use Illuminate\Contracts\Encryption\DecryptException;
 
