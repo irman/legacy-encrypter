@@ -5,6 +5,7 @@
 | 5.3.* | 5.3.* | `composer require irman/legacy-encrypter:5.3.*` |
 | 5.4.* | 5.4.* | `composer require irman/legacy-encrypter:5.4.*` |
 | 5.5.* | 5.5.* | `composer require irman/legacy-encrypter:5.5.*` |
+| 5.6.* | 5.6.* | `composer require irman/legacy-encrypter:5.5.*` |
 
 ---
 
