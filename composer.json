@@ -22,8 +22,8 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "ext-openssl": "*",
-        "illuminate/contracts": "5.6.*",
-        "illuminate/support": "5.6.*",
+        "illuminate/contracts": "5.7.*",
+        "illuminate/support": "5.7.*",
         "paragonie/random_compat": "~1.4|~2.0",
         "phpseclib/mcrypt_compat": "~1.0"
     },
