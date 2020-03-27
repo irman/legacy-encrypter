@@ -8,6 +8,7 @@
 | 5.6.* | 5.6.* | `composer require irman/legacy-encrypter:5.6.*` |
 | 5.7.* | 5.7.* | `composer require irman/legacy-encrypter:5.7.*` |
 | 5.8.* | 5.8.* | `composer require irman/legacy-encrypter:5.8.*` |
+| 6.* | 6.* | `composer require irman/legacy-encrypter:6.*` |
 
 ---
 
