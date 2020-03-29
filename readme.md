@@ -2,13 +2,14 @@
 
 | Laravel Version | Package Version | Installation |
 | --- | --- | --- |
-| 5.3.* | 5.3.* | `composer require irman/legacy-encrypter:5.3.*` |
-| 5.4.* | 5.4.* | `composer require irman/legacy-encrypter:5.4.*` |
-| 5.5.* | 5.5.* | `composer require irman/legacy-encrypter:5.5.*` |
-| 5.6.* | 5.6.* | `composer require irman/legacy-encrypter:5.6.*` |
-| 5.7.* | 5.7.* | `composer require irman/legacy-encrypter:5.7.*` |
-| 5.8.* | 5.8.* | `composer require irman/legacy-encrypter:5.8.*` |
-| 6.* | 6.* | `composer require irman/legacy-encrypter:6.*` |
+| 5.3.* | 5.3.* | `composer require irman/legacy-encrypter:^5.3.0` |
+| 5.4.* | 5.4.* | `composer require irman/legacy-encrypter:^5.4.0` |
+| 5.5.* | 5.5.* | `composer require irman/legacy-encrypter:^5.5.0` |
+| 5.6.* | 5.6.* | `composer require irman/legacy-encrypter:^5.6.0` |
+| 5.7.* | 5.7.* | `composer require irman/legacy-encrypter:^5.7.0` |
+| 5.8.* | 5.8.* | `composer require irman/legacy-encrypter:^5.8.0` |
+| 6.* | 6.* | `composer require irman/legacy-encrypter:^6.0` |
+| 7.* | 7.* | `composer require irman/legacy-encrypter:^7.0` |
 
 ---
 
